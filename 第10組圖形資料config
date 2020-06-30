@@ -1,8 +1,8 @@
 var config = {
 	container_id: "viz",
-	server_url: "bolt://34.239.207.167:34987",
+	server_url: "bolt://34.224.17.116:48726",
 	server_user: "neo4j",
-	server_password: "men-noun-purchase",
+	server_password: "spool-charges-ideas",
 	labels: {
 		"Character": {
 			"caption": "name",
