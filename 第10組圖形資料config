@@ -3,12 +3,16 @@ var config = {
 	server_url: "bolt://34.224.17.116:48726",
 	server_user: "neo4j",
 	server_password: "spool-charges-ideas",
-	labels: {
-		"Character": {
-			"caption": "name",
-			"size": "pagerank",
-			"community": "community"
-		}
+	labels:{
+		"Category": {
+			"caption": "title",
+			"sizeCypher": "MATCH (n) WHERE id(n)=$id RETURN CASE n.parents WHEN '***' THEN 10 ELSE 5 END;"
+		},
+		"刺客組織":{"caption": "title"},
+		"偉倫。湯谷公司":{"caption": "title"},
+		"旁觀者":{"caption": "title"},
+		"平民":{"caption":"title"},
+		"政府組織":{"caption":"title"}
 	},
 	relationships: {
 		"INTERACTS": {
@@ -16,5 +20,5 @@ var config = {
 			"caption": false
 		}
 	},
-	initial_cypher: "MATCH (n)-[r:INTERACTS]->(m) RETURN n,r,m limit 100"
+	initial_cypher: "MATCH (n)-[r]->(m) RETURN n,r,m "
 };
